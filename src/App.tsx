@@ -198,9 +198,14 @@ export default function App() {
   function search(value: string) {
     setQuery(value);
     setOffset(0);
+    closeReader();
+    setError("");
+  }
+  function closeReader() {
+    ++readRequest.current;
     setSlice(null);
     setSelected(null);
-    setError("");
+    setReading(false);
   }
   async function open(hit: Hit, start = Math.max(0, hit.messageOrder - 4)) {
     const current = ++readRequest.current;
@@ -358,8 +363,7 @@ export default function App() {
                 onClick={() => {
                   setMode(item);
                   setOffset(0);
-                  setSlice(null);
-                  ++readRequest.current;
+                  closeReader();
                 }}
               >
                 <span>{["⌕", "↳", "⊞"][i]}</span>
@@ -380,7 +384,7 @@ export default function App() {
               onChange={(e) => {
                 setCore(e.target.checked);
                 setOffset(0);
-                setSlice(null);
+                closeReader();
               }}
             />{" "}
             QATC / ALi and related
@@ -534,7 +538,7 @@ export default function App() {
                       disabled={loading || offset === 0}
                       onClick={() => {
                         setOffset(Math.max(0, offset - 30));
-                        setSlice(null);
+                        closeReader();
                       }}
                     >
                       ← Previous
@@ -548,7 +552,7 @@ export default function App() {
                       disabled={loading || offset + 30 >= total}
                       onClick={() => {
                         setOffset(offset + 30);
-                        setSlice(null);
+                        closeReader();
                       }}
                     >
                       Next →
@@ -561,11 +565,7 @@ export default function App() {
                       <span className="eyebrow">ORIGINAL CONVERSATION</span>
                       <button
                         aria-label="Close conversation"
-                        onClick={() => {
-                          ++readRequest.current;
-                          setSelected(null);
-                          setSlice(null);
-                        }}
+                        onClick={closeReader}
                       >
                         ×
                       </button>
