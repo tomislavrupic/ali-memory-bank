@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.private/
+.wrangler/
+.env*
+.dev.vars*
+output/
+.playwright-cli/
+.DS_Store
+*.tsbuildinfo

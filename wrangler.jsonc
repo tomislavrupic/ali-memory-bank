@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ali-memory-bank",
+  "main": "server/worker.mjs",
+  "account_id": "beac2a066e8426a1a47915d3f4bd2c25",
+  "compatibility_date": "2026-10-19",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "APP_URL": "https://tomislavrupic.github.io/ali-memory-bank/",
+    "ACCESS_TEAM_DOMAIN": "lively-cloud-4f75.cloudflareaccess.com",
+    "ACCESS_AUD": "ee57534c223c3417ba057a94ba1c875891962096909a07d939659974c870227a",
+    "OWNER_EMAIL": "tom.d.vox@gmail.com",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ali-memory-bank",
+      "database_id": "1f50f0a6-dfc6-4033-ac82-9c09d06505ef",
+    },
+  ],
+  "observability": { "enabled": false },
+}
