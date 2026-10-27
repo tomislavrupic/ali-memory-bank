@@ -333,7 +333,7 @@ export default function App() {
         </section>
         <footer className="login-bottom">
           <span>ALi / EARLY MEMORY</span>
-          <span>A place to return to.</span>
+          <a className="pixel-records-home-link" href="https://tomislav-rupic.com/" style={{ display: "inline-flex", alignItems: "center", minHeight: 44, padding: "8px 12px", color: "inherit", textDecoration: "underline", textUnderlineOffset: 3, font: "inherit" }}>← tomislav-rupic.com</a>
         </footer>
       </main>
     );
@@ -346,6 +346,7 @@ export default function App() {
         <a className="brand" href={location.pathname}>
           ALi <span>/</span> MEMORY BANK
         </a>
+        <a className="pixel-records-home-link" href="https://tomislav-rupic.com/" style={{ display: "inline-flex", alignItems: "center", minHeight: 44, padding: "8px 12px", color: "inherit", textDecoration: "underline", textUnderlineOffset: 3, font: "inherit" }}>← tomislav-rupic.com</a>
         <div className="account">
           <span className="online-dot" />
           <span>{identity.email}</span>
